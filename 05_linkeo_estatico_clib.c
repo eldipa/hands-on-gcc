@@ -10,8 +10,7 @@
 
 // [4] Ver cuanto pesa el binario y comparalo con el binario del tutorial anterior
 // 
-// Bien! has terminado este tutorial. El camino hacia el entendimiento de la Fuerza
-// continua 06_libs/06_main.c
+// Bien! has terminado este tutorial. Continua en 06_libs/06_main.c
 
 int puts(const char*); // [3] esta funcion, donde esta definida?
                        // objdump va a mostrar que el codigo de puts *si*

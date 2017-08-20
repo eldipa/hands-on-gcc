@@ -12,6 +12,8 @@
 //
 // No continues leyendo hasta no haber compilado, creeme, vale la pena hacer 
 // este ejercicio.
+//
+// Luego, sigue con el paso [2]
 
 
 

@@ -3,9 +3,8 @@
 //
 // Error, eh? Esta vez pusimos una forward declaration de la estructura Person,
 // por que falla la compilacion esta vez?
-// Ver los comentarios de la funcion person_set [2]
 //
-// Luego leer los comentarios de la seccion 'definitions'
+// Ver los comentarios de la funcion person_set [2]
 //
 
 
@@ -36,6 +35,7 @@ struct Person {
 //
 // Trata de ver los offsets para acceder a cada uno de los atributos dentro de 
 // la funcion person_set
+//
 // Intenta ver cuanto espacio se reserva en el stack para la estructura.
 //
 // Es por esta razon que el compilador necesita la definicion de la

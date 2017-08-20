@@ -33,6 +33,8 @@
 //
 // Wow! ASAN detecto el buffer overflow.
 //
+// ASAN es una nueva tecnologia para la deteccion de errores de codigo C. 
+//
 // Asi termina esta serie de tutoriales, pero tu entrenamiento continua mi joven padawan.
 // 
 //      https://www.youtube.com/watch?v=h5SNAluOj6U

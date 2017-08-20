@@ -86,7 +86,10 @@ int main(int argc, char* argv[]) {
     // 
     // No crea que solo lenguajes dinamicos como Python o Ruby pueden hacer
     // magia, 
-    //          Do not underestimate C.
+    //
+    //          Don't underestimate C.
+    //                          -- Darth Vader
+    //
     int result = by2(3) + by3(2);
 
     // [8] 

@@ -2,10 +2,11 @@
 //  gcc -Wall -Werror -std=c99 -pedantic -c 02_fw_declaration.c
 //
 // Error, eh? Tomese un segundo para leer el error y tratar de interpretarlo.
+//
 // Es importante esto por que en la vida real usted se enfrentara a errores como
 // estos y no habra un comentario como este que le indique como solucionarlo.
 //
-// Luego ver los comentarios de la funcion foofunc [2]
+// Luego, ver los comentarios de la funcion foofunc [2]
 //
 
 
@@ -47,9 +48,11 @@
 //    del programador?
 //  - Como sabe que person_print_name existe y que recibe un solo argumento
 //    y de ese tipo?
+//
 // Sin esa informacion el compilador no puede chequear la sintaxis/semantica 
 // y fallara por que estamos compilando en modo stricto: 
 //      -Wall -Werror -std=c99 -pedantic 
+//
 // Solo en muy raras ocaciones se debe relajar esos chequeos.
 void foofunc(struct Person *person) {
     person_print_name(person);
