@@ -1,12 +1,20 @@
-# Tutoriales interactivos de compilacion
+# Taller de programación I
 
-Lee el codigo fuente de los archivos en orden, comenzando por 01_simple.c
+## Compilación
 
-En cada tutorial encontraras comentarios para guiarte en los ejercicios.
-Debes seguirlos en orden comenzando por [1], [2], ...
+### Acerca de
 
-Este es un tutorial *interactivo* y depende de vos hacerlo; contiene 
-informacion muy *valiosa* para entender como C/C++ funcionan y compilan.
+En este repositorio se encuentran
 
-Tu camino empieza en 01_simple.c
+* Un tutorial interactivo de compilación con **gcc** 
+
+* Un tutorial semi-interactivo de scripting de compilación con **make**
+
+## Descarga
+
+Clonar el repositorio con el siguiente comando
+
+~~~{.bash}
+git clone https://github.com/taller-de-programacion/compilacion
+~~~
 
