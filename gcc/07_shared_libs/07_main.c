@@ -15,19 +15,19 @@
 //
 //      -shared     genera una libreria dinamica que puede ser cargada en un ejecutable
 //                  en tiempo de load (cuando el programa se carga a memoria) o incluso
-//                  en tiempo de ejecucion (el mismo programa que ya esta corriendo 
+//                  en tiempo de ejecucion (el mismo programa que ya esta corriendo
 //                  puede cargar esta libreria)
 //
 
 // [2]
 // Armar el ejecutable
 // -------------------
-// 
+//
 // Notese como *no* estamos linkeando con la libreria 07_lib.so.
 //
 //  gcc -Wall -Werror -std=c99 -pedantic -ggdb -o 07_main.exe  07_main.c -ldl
 //
-//      -ldl        Carga la libreria dl necesaria con las definiciones de las 
+//      -ldl        Carga la libreria dl necesaria con las definiciones de las
 //                  funciones dlopen, dlsym, dlerror y dlclose entre otras.
 //                  Dichas funciones nos permitiran cargar una libreria dinamica
 //                  en tiempo de ejecucion.
@@ -44,7 +44,7 @@ int print_error_and_close(void *shared_lib, const char *msj, const char *err) {
 }
 
 int main(int argc, char* argv[]) {
-    const char *err; 
+    const char *err;
     // [3]
     // En tiempo de ejecucion podemos carga en memoria una libreria dinamica o
     // shared library. En linux estas librerias tienen extension .so, en windows
@@ -58,7 +58,7 @@ int main(int argc, char* argv[]) {
         printf("dlopen failed: %s\n", err);
         return -1;
     }
-    
+
     // [4]
     // Con la libreria en memory podemos obtener punteros a las funciones
     // que alli se encuentran definidas.
@@ -67,15 +67,15 @@ int main(int argc, char* argv[]) {
     *(void**) (&by2) = dlsym(shared_lib, "by2"); // [5] tomese un tiempo para
     err = dlerror();                             // entender ese casteo
 
-    if(err) 
+    if(err)
         return print_error_and_close(shared_lib, "dlsym for by2 failed", err);
-    
+
 
     func_pointer by3;
     *(void**) (&by3) = dlsym(shared_lib, "by3"); // [6] asegurese de haber
     err = dlerror();                             // entendido este casteo
-    
-    if(err) 
+
+    if(err)
         return print_error_and_close(shared_lib, "dlsym for by3 failed", err);
 
 
@@ -83,16 +83,16 @@ int main(int argc, char* argv[]) {
     // Ahora usamos esos punteros a funcion normalmente.
     // Notese que nada impide cargar otras librerias dinamicas e incluso cambiar
     // la definicion de estas funciones en tiempo de ejecucion!
-    // 
+    //
     // No crea que solo lenguajes dinamicos como Python o Ruby pueden hacer
-    // magia, 
+    // magia,
     //
     //          Don't underestimate C.
     //                          -- Darth Vader
     //
     int result = by2(3) + by3(2);
 
-    // [8] 
+    // [8]
     // Como todo recurso, hay que liberarlo luego de su uso.
     //
     // Bien! has terminado este tutorial. Continue en 08_includes/08_main.c

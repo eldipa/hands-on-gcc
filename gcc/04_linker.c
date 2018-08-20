@@ -38,7 +38,7 @@ int puts(const char*); // [7] esta funcion, donde esta definida?
                        // el ejecutable puede correr sin problemas.
                        //
                        // El codigo de puts esta en una libreria externa, la libc
-                       // que se carga al momento de ejecutar el programa: 
+                       // que se carga al momento de ejecutar el programa:
                        // esto se llama linkeo dinamico
                        //
                        // La ventaja de un linkeo dinamico es que permite reutilizar
@@ -59,7 +59,7 @@ void say_hello() {   // [6] objdump va a mostrar que el codigo de say_hello
 //
 // Bien! has terminado este tutorial.
 //
-//      Well, the libc is what gives a Jedi his power. 
+//      Well, the libc is what gives a Jedi his power.
 //      It surrounds us and penetrates us; it binds the galaxy together.
 //                              - Obi-Wan Kenobi
 //

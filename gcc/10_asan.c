@@ -2,7 +2,7 @@
 // Armar un ejecutable (gcc va a precompilar, compilar y linkear) con:
 //  gcc -std=c99 -ggdb -fno-stack-protector -o 10_asan.exe  10_asan.c
 //
-//      -fno-stack-protector    deshabilitamos ciertas protecciones que hace el compilador 
+//      -fno-stack-protector    deshabilitamos ciertas protecciones que hace el compilador
 //                              sobre los buffers (reordenamiento en el stack y canaries)
 //                              Salvo que se tenga una excelente razon, *jamas* hagas esto.
 //                              Este flag esta puesto a tan solo los efectos de este ejemplo.
@@ -33,10 +33,10 @@
 //
 // Wow! ASAN detecto el buffer overflow.
 //
-// ASAN es una nueva tecnologia para la deteccion de errores de codigo C. 
+// ASAN es una nueva tecnologia para la deteccion de errores de codigo C.
 //
 // Asi termina esta serie de tutoriales, pero tu entrenamiento continua mi joven padawan.
-// 
+//
 //      https://www.youtube.com/watch?v=h5SNAluOj6U
 //
 

@@ -9,7 +9,7 @@
 //
 
 // [4] Ver cuanto pesa el binario y comparalo con el binario del tutorial anterior
-// 
+//
 // Bien! has terminado este tutorial. Continua en 06_libs/06_main.c
 
 int puts(const char*); // [3] esta funcion, donde esta definida?

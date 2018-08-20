@@ -1,6 +1,6 @@
-// [1] Ejecutar gcc y detenerlo luego de la etapa de compilacion (gcc va a 
-// precompilar y compilar pero no linkear) usando el flag (-c). 
-// Esto genera codigo objeto pero no un binario ejecutable (falta la etapa de 
+// [1] Ejecutar gcc y detenerlo luego de la etapa de compilacion (gcc va a
+// precompilar y compilar pero no linkear) usando el flag (-c).
+// Esto genera codigo objeto pero no un binario ejecutable (falta la etapa de
 // linkeo):
 //  gcc -Wall -Werror -std=c99 -pedantic -c  01_simple.c
 //
@@ -10,7 +10,7 @@
 //      -pedantic   ser mas estrictos con el estandar
 //      -c          gcc detiene el proceso luego de la etapa de compilacion
 //
-// No continues leyendo hasta no haber compilado, creeme, vale la pena hacer 
+// No continues leyendo hasta no haber compilado, creeme, vale la pena hacer
 // este ejercicio.
 //
 // Luego, sigue con el paso [2]
@@ -50,13 +50,13 @@
 // de que haga el codigo objeto mas optimo posible
 //  gcc -Wall -Werror -std=c99 -pedantic -O3 -c 01_simple.c
 //
-//      -On         nivel de optimizacion 'n': 0 (sin optimizar), 1 y 2 (optimizacion normal), 
-//                                             3 (optimizacion agresiva), 
+//      -On         nivel de optimizacion 'n': 0 (sin optimizar), 1 y 2 (optimizacion normal),
+//                                             3 (optimizacion agresiva),
 //                                             s (optimiza el tamaño del binario, no su velocidad)
 //
-//      **Nota:** si se quiere debuggear un programa no solo hay que usar el 
-//                flag -ggdb sino que tambien hay que deshabilitar explicitamente 
-//                cualquier optimizacion con el flag -O0. De otro modo la tarea 
+//      **Nota:** si se quiere debuggear un programa no solo hay que usar el
+//                flag -ggdb sino que tambien hay que deshabilitar explicitamente
+//                cualquier optimizacion con el flag -O0. De otro modo la tarea
 //                de debugging sera mucho mas dificil.
 
 

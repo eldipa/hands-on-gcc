@@ -19,15 +19,15 @@
 //
 // struct Person;
 
-// [4] Descomenta esto tambien para decirle al compilador que existe una 
+// [4] Descomenta esto tambien para decirle al compilador que existe una
 // funcion llamada person_print_name con esta firma:
 //
 // void person_print_name(struct Person*);
 
 
-// [5] Vuelve a compilar. Ahora compila? 
+// [5] Vuelve a compilar. Ahora compila?
 //
-// Esto se lo conoce como declaracion adelantada o forward 
+// Esto se lo conoce como declaracion adelantada o forward
 // declaration. Se usa para decirle al compilador que una estructura o
 // funcion existen en algun lado y que nosotros (los programadores) confirmamos
 // su existencia.
@@ -36,22 +36,22 @@
 
 
 
-// [2] Ya compilaste como lo dice [1] ? No sigas si no lo hiciste o si no 
-// leiste los mensajes de error del compilador. 
-// 
+// [2] Ya compilaste como lo dice [1] ? No sigas si no lo hiciste o si no
+// leiste los mensajes de error del compilador.
+//
 // Es muy IMPORTANTE leerlos para que los puedas reconocer y entender.
-// Es TU DECISION si invertis tiempo ahora o dejarlo a la suerte. 
+// Es TU DECISION si invertis tiempo ahora o dejarlo a la suerte.
 //
 // El compilador sabe el size de un puntero y tiene toda la informacion
 // para generar codigo objeto pero no puede validarlo
-//  - Como sabe el compilador que struct Person existe y no es un typo 
+//  - Como sabe el compilador que struct Person existe y no es un typo
 //    del programador?
 //  - Como sabe que person_print_name existe y que recibe un solo argumento
 //    y de ese tipo?
 //
-// Sin esa informacion el compilador no puede chequear la sintaxis/semantica 
-// y fallara por que estamos compilando en modo stricto: 
-//      -Wall -Werror -std=c99 -pedantic 
+// Sin esa informacion el compilador no puede chequear la sintaxis/semantica
+// y fallara por que estamos compilando en modo stricto:
+//      -Wall -Werror -std=c99 -pedantic
 //
 // Solo en muy raras ocaciones se debe relajar esos chequeos.
 void foofunc(struct Person *person) {

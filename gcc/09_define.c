@@ -33,8 +33,8 @@
 
 // [7]
 // Las macros pueden ser completamente arbitrarias.
-// Sin embargo, el precompilador solo debe ser usado en 
-// casos *muy* especificos y *muy* justificados. 
+// Sin embargo, el precompilador solo debe ser usado en
+// casos *muy* especificos y *muy* justificados.
 //
 // Son extraordinariamente dificiles de debuggear y entender y no tienen
 // ningun chequeo por parte del compilador.
@@ -44,7 +44,7 @@
             (elem) = (array)[i], \
             i < sizeof((array)) / sizeof(*(array)); \
             ++i)
-    
+
 
 #include <stdio.h>
 int main(int argc, char* argv[]) {
@@ -55,20 +55,20 @@ int main(int argc, char* argv[]) {
     //
     // Entonces
     //    2 || 4 es equivalente a "true or true", o sea, "true" y por lo tanto 1.
-    // 
+    //
     // Entonces
     //    MAX(2 || 4, f) ==> MAX(1, 3.1416) ==> 3.1416
     //    MAX(f, 2 || 4) ==> MAX(3.1416, 1) ==> 3.1416
     // no?
-    printf("Max between %f and %f ==> %f\n", 
-            (float)(2 || 4), 
-            f, 
+    printf("Max between %f and %f ==> %f\n",
+            (float)(2 || 4),
+            f,
             MAX(2 || 4, f)); // esto da el resultado correcto?
 
-    printf("Max between %f and %f ==> %f\n", 
-            f, 
-            (float)(2 || 4), 
-            MAX(f, 2 || 4)); // este printf deberia ser igual 
+    printf("Max between %f and %f ==> %f\n",
+            f,
+            (float)(2 || 4),
+            MAX(f, 2 || 4)); // este printf deberia ser igual
                              // al anterior (MAX es simetrica, no?)
     printf("\n");
 
