@@ -41,8 +41,8 @@
 //
 
 #include <stdio.h>
-void fill(char *buf, int buf_size, const char c) {
-    for (int i = 0; i < buf_size; ++i) {
+void fill(char *buf, int buf_size, const char c, int inc) {
+    for (int i = 0; i < buf_size; i+=inc) {
         buf[i] = c;
     }
 }
@@ -52,11 +52,37 @@ int main(int argc, char* argv[]) {
     char buf[4];
 
     // Codigo especial para forzar un buffer overflow "chico"
-    int buf_size = ((void*)&cookie - (void*)&buf[0] + 4); // <-- nunca hagan esto
-    if (buf_size < 4) {printf("buuuu\n"); return 1;} // si entra en el if, el compilador alloco la variable buf antes que 
-                                                     // cookie entonces no se puede pisar con un buffer overflow :(
-
-    fill(buf, buf_size, 'A');
+    int delta = ((void*)&cookie - (void*)&buf[0]);
+    if (delta > 0) {
+        // El stack tiene esta forma:
+        //  [main args]  posiciones altas en memoria
+        //  [ cookie  ]
+        //  [ buf[3]  ]
+        //  [ buf[2]  ]
+        //  [ buf[1]  ]
+        //  [ buf[0]  ]  posiciones bajas en memoria
+        fill(buf, delta + sizeof(cookie), 'A', 1);
+    }
+    else {
+        // El stack tiene esta forma:
+        //  [main args]  posiciones altas en memoria
+        //  [ buf[3]  ]
+        //  [ buf[2]  ]
+        //  [ buf[1]  ]
+        //  [ buf[0]  ]
+        //  [ cookie  ]  posiciones bajas en memoria
+        //
+        // El compilador cambio el orden de los elementos del stack
+        // Esto lo hace en algunas ocaciones como medida de seguridad, ya
+        // que la mayoria de los buffer overflows son hacia las posiciones
+        // mas altas de los buffers (buf[4], buf[5], buf[6], ...).
+        // Si esto es asi, al poner los buffer mas arriba de todo, un overflow
+        // chico corromperia ciertos valores que el ejecutable podria detectar
+        // y abortar la aplicacion. (Estos valores se lo llaman canaries)
+        //
+        // En este caso tenemos que hacer un underflow o un "overflow hacia atras"
+        fill(buf, -delta, 'B', -1);
+    }
 
     printf("cookie: %x\n", cookie);
 

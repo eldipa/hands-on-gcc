@@ -63,7 +63,7 @@
 //  ar -rc lib06_lib.a 06_libby2.o 06_libby3.o
 //
 // 2) y luego compilar el resto del proyecto y linkear con la lib
-//  gcc -Wall -Werror -std=c99 -pedantic -o 06_main 06_main.c -l06_lib
+//  gcc -Wall -Werror -std=c99 -pedantic -o 06_main.exe 06_main.c -l06_lib
 //
 // Tira error, no? el flag "-l" y su argumento "06_lib" le dicen a gcc que hay
 // que buscar una libreria llamada "lib06_lib.a" en las carpetas del sistema.
