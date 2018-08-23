@@ -47,6 +47,15 @@ int puts(const char*); // [7] esta funcion, donde esta definida?
                        //
                        // Otra ventaja es que cualquier bug en la lib dinamica solo requiere
                        // recompilar la lib y reiniciar los programas que la usan
+                       //
+       // [8] Volver a compilar pero con un flag adicional:
+       //   gcc -Wall -Werror -std=c99 -pedantic -ggdb -nostdlib -o 04_linker.exe  04_linker.c
+       //
+       //       -nostdlib: instruye al compilador que no linkee con la libreria
+       //                  estandar de C, la "libc".
+       //
+       // Verificar que el linkeo falla por que la funcion puts no esta definida
+       //
 
 void say_hello() {   // [6] objdump va a mostrar que el codigo de say_hello
     puts("Hello");   // esta dentro del mismo binario: esto se llama linkeo estatico
@@ -55,7 +64,8 @@ void say_hello() {   // [6] objdump va a mostrar que el codigo de say_hello
 }
 */
 
-// [8] Realmente tienes que intentar ver el codigo de say_hello. No avances si no lo hiciste
+// [9] Realmente tienes que intentar ver el codigo de say_hello.
+//     No avances si no lo hiciste!!
 //
 // Bien! has terminado este tutorial.
 //
