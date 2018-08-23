@@ -5,17 +5,31 @@
 // Ejecutar el programa, da lo que se espera? Acaso una funcion MAX no es simetrica?
 
 
-// [5]
+// [6]
 // Precompilar (y solo precompilar) con
 //  gcc -Wall -Werror -std=c99 -pedantic -E 09_define.c
 //
 // Ver como se expanden las constantes y las macros. Por que esta mal el codigo generado
 // cuando se usa la macro MAX?
+//
 
 
-// [6]
+// [7]
 // Comentar la macro MAX **mal** implementada y descomentar la **bien** implementada
 // Compilar y ejecutar el programa
+//
+// Verificar que MAX funciona correctamente.
+
+// [8]
+// Volver a compilar con
+//  gcc -Wall -Werror -std=c99 -pedantic -DDEBUG -o 09_define.exe 09_define.c
+//
+//      -D<macro>[=<def>]:   define la macro <macro>, opcionalmente con
+//                           el valor <def>. Es equivalente a haber hecho un
+//                           #define
+//
+// Ejecutar el programa. Que son esos prints extra?
+// Que valores tomaron __FILE__ y __LINE__?
 //
 
 
@@ -31,7 +45,15 @@
                                                 //  - toda la macro es puesta entre parentesis
                                                 //
 
-// [7]
+// [4] En este caso, definimos una macro que dependera
+// de si DEBUG esta definido o no
+#ifdef DEBUG
+#define print_debug(msg) (printf("%s:%d %s\n", __FILE__, __LINE__, (msg)))
+#else
+#define print_debug(msg)
+#endif
+
+// [9]
 // Las macros pueden ser completamente arbitrarias.
 // Sin embargo, el precompilador solo debe ser usado en
 // casos *muy* especificos y *muy* justificados.
@@ -49,12 +71,15 @@
 #include <stdio.h>
 int main(int argc, char* argv[]) {
     float f = PI;
+    print_debug("antes de llamar a MAX");
 
-    // [4]
-    // En C, todo numero salvo 0 es considerado como true y un true es considerado como un 1
+    // [5]
+    // En C, todo numero salvo 0 es considerado como true
+    // y un true es considerado como un 1
     //
     // Entonces
-    //    2 || 4 es equivalente a "true or true", o sea, "true" y por lo tanto 1.
+    //    2 || 4 es equivalente a "true or true", o sea,
+    //    "true" y por lo tanto 1.
     //
     // Entonces
     //    MAX(2 || 4, f) ==> MAX(1, 3.1416) ==> 3.1416
@@ -74,9 +99,10 @@ int main(int argc, char* argv[]) {
 
     int nums[] = {1, 2, 3, 5, 8};
     int n;
+    print_debug("imprimiendo los numeros");
     printf("Numbers: \n");
 
-    // [8]
+    // [10]
     // Luke: Is the precompiler stronger?
     // Yoda: No, no, no. Quicker, easier, more seductive.
     //       ifndefs, defines, macros; the dark side of the Force are they
@@ -88,5 +114,6 @@ int main(int argc, char* argv[]) {
     }
     printf("\n");
 
+    print_debug("saliendo del main");
     return 0;
 }
