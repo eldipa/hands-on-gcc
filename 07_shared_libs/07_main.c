@@ -5,7 +5,7 @@
 //  Compilar la libreria generando codigo cuyos offsets son independientes
 //  (aka no hardcodeados)
 //
-//  gcc -Wall -Werror -std=c99 -pedantic -fPIC -shared -o 07_lib.so 07_libby2.c 07_libby3.c
+//  gcc -Wall -Werror -std=c11 -pedantic -fPIC -shared -o 07_lib.so 07_libby2.c 07_libby3.c
 //
 //      -fPIC       el codigo generado no asume posiciones fijas en memoria
 //                  sino relativas a una posicion "a definir". Este nivel de
@@ -25,7 +25,7 @@
 //
 // Notese como *no* estamos linkeando con la libreria 07_lib.so.
 //
-//  gcc -Wall -Werror -std=c99 -pedantic -ggdb -o 07_main.exe  07_main.c -ldl
+//  gcc -Wall -Werror -std=c11 -pedantic -ggdb -o 07_main.exe  07_main.c -ldl
 //
 //      -ldl        Carga la libreria dl necesaria con las definiciones de las
 //                  funciones dlopen, dlsym, dlerror y dlclose entre otras.

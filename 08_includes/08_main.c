@@ -1,11 +1,11 @@
 // [1]
 // Generar codigo objeto (sin linkear) con:
-//  gcc -Wall -Werror -std=c99 -pedantic -c 08_main.c
+//  gcc -Wall -Werror -std=c11 -pedantic -c 08_main.c
 //
 // Falla, verdad?
 //
 // Precompilar (y solo precompilar) con:
-//  gcc -Wall -Werror -std=c99 -pedantic -E 08_main.c
+//  gcc -Wall -Werror -std=c11 -pedantic -E 08_main.c
 //
 //      -E      detiene a gcc luego de la etapa de precompilacion
 //
@@ -20,7 +20,7 @@
 
 // [5]
 // Volver a compilar:
-//  gcc -Wall -Werror -std=c99 -pedantic -c 08_main.c
+//  gcc -Wall -Werror -std=c11 -pedantic -c 08_main.c
 //
 // ahora funciona verdad?
 // Medite el por que de esto...

@@ -1,13 +1,13 @@
 // [1]
 // Armar un ejecutable (gcc va a precompilar, compilar y linkear) con:
-//  gcc -Wall -Werror -std=c99 -pedantic -o 09_define.exe 09_define.c
+//  gcc -Wall -Werror -std=c11 -pedantic -o 09_define.exe 09_define.c
 //
 // Ejecutar el programa, da lo que se espera? Acaso una funcion MAX no es simetrica?
 
 
 // [6]
 // Precompilar (y solo precompilar) con
-//  gcc -Wall -Werror -std=c99 -pedantic -E 09_define.c
+//  gcc -Wall -Werror -std=c11 -pedantic -E 09_define.c
 //
 // Ver como se expanden las constantes y las macros. Por que esta mal el codigo generado
 // cuando se usa la macro MAX?
@@ -22,7 +22,7 @@
 
 // [8]
 // Volver a compilar con
-//  gcc -Wall -Werror -std=c99 -pedantic -DDEBUG -o 09_define.exe 09_define.c
+//  gcc -Wall -Werror -std=c11 -pedantic -DDEBUG -o 09_define.exe 09_define.c
 //
 //      -D<macro>[=<def>]:   define la macro <macro>, opcionalmente con
 //                           el valor <def>. Es equivalente a haber hecho un

@@ -1,5 +1,5 @@
 // [1] Generar codigo objeto (sin linkear) con:
-//  gcc -Wall -Werror -std=c99 -pedantic -ggdb -c 04_linker.c
+//  gcc -Wall -Werror -std=c11 -pedantic -ggdb -c 04_linker.c
 //
 // Ningun problema. La compilacion funciono perfectamente.
 
@@ -10,7 +10,7 @@
 
 // [3] No continues si no hiciste [1] o [2]
 // Armar un ejecutable (gcc va a precompilar, compilar y linkear) con:
-//  gcc -Wall -Werror -std=c99 -pedantic -ggdb -o 04_linker.exe  04_linker.c
+//  gcc -Wall -Werror -std=c11 -pedantic -ggdb -o 04_linker.exe  04_linker.c
 //
 //      -o <name>:  gcc usa ese nombre como nombre del executable
 //
@@ -49,7 +49,7 @@ int puts(const char*); // [7] esta funcion, donde esta definida?
                        // recompilar la lib y reiniciar los programas que la usan
                        //
        // [8] Volver a compilar pero con un flag adicional:
-       //   gcc -Wall -Werror -std=c99 -pedantic -ggdb -nostdlib -o 04_linker.exe  04_linker.c
+       //   gcc -Wall -Werror -std=c11 -pedantic -ggdb -nostdlib -o 04_linker.exe  04_linker.c
        //
        //       -nostdlib: instruye al compilador que no linkee con la libreria
        //                  estandar de C, la "libc".

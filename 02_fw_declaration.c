@@ -1,5 +1,5 @@
 // [1] Generar codigo objeto (sin linkear) con:
-//  gcc -Wall -Werror -std=c99 -pedantic -c 02_fw_declaration.c
+//  gcc -Wall -Werror -std=c11 -pedantic -c 02_fw_declaration.c
 //
 // Error, eh? Tomese un segundo para leer el error y tratar de interpretarlo.
 //
@@ -51,7 +51,7 @@
 //
 // Sin esa informacion el compilador no puede chequear la sintaxis/semantica
 // y fallara por que estamos compilando en modo stricto:
-//      -Wall -Werror -std=c99 -pedantic
+//      -Wall -Werror -std=c11 -pedantic
 //
 // Solo en muy raras ocaciones se debe relajar esos chequeos.
 void foofunc(struct Person *person) {

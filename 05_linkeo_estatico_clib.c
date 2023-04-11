@@ -1,5 +1,5 @@
 // [1] Armar un ejecutable (gcc va a precompilar, compilar y linkear) con:
-//  gcc -Wall -Werror -std=c99 -pedantic -ggdb -static -o 05_linkeo_estatico_clib.exe 05_linkeo_estatico_clib.c
+//  gcc -Wall -Werror -std=c11 -pedantic -ggdb -static -o 05_linkeo_estatico_clib.exe 05_linkeo_estatico_clib.c
 //
 //      -static:    fuerza a que el linkeo sea estatico, agregando el codigo objeto al binario final
 

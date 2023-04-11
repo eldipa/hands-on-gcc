@@ -2,11 +2,11 @@
 // precompilar y compilar pero no linkear) usando el flag (-c).
 // Esto genera codigo objeto pero no un binario ejecutable (falta la etapa de
 // linkeo):
-//  gcc -Wall -Werror -std=c99 -pedantic -c  01_simple.c
+//  gcc -Wall -Werror -std=c11 -pedantic -c  01_simple.c
 //
 //      -Wall       emitir todos los warnings
 //      -Werror     todos los warning son considerados errores (detienen el proceso)
-//      -std=c99    ser estricto y no permitir nada fuera del estandar C99
+//      -std=c11    ser estricto y no permitir nada fuera del estandar C11
 //      -pedantic   ser mas estrictos con el estandar
 //      -c          gcc detiene el proceso luego de la etapa de compilacion
 //
@@ -31,7 +31,7 @@
 
 // [4] Generar codigo objeto (gcc va a precompilar y compilar, pero no linkear)
 // pero esta vez agregandole los simbolos de debugging:
-//  gcc -Wall -Werror -std=c99 -pedantic -ggdb -c 01_simple.c
+//  gcc -Wall -Werror -std=c11 -pedantic -ggdb -c 01_simple.c
 //
 //      -ggdb       incluye en el binario todos los simbolos y datos necesarios para poder
 //                  correlacionar el codigo objeto con el codigo fuente y asi poder debuggear
@@ -48,7 +48,7 @@
 
 // [6] Generar codigo objeto (sin linkear) pero esta vez instruyendole a gcc
 // de que haga el codigo objeto mas optimo posible
-//  gcc -Wall -Werror -std=c99 -pedantic -O3 -c 01_simple.c
+//  gcc -Wall -Werror -std=c11 -pedantic -O3 -c 01_simple.c
 //
 //      -On         nivel de optimizacion 'n': 0 (sin optimizar), 1 y 2 (optimizacion normal),
 //                                             3 (optimizacion agresiva),

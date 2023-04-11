@@ -1,6 +1,6 @@
 // [1]
 // Armar un ejecutable (gcc va a precompilar, compilar y linkear) con:
-//  gcc -std=c99 -ggdb -fno-stack-protector -o 10_asan.exe  10_asan.c
+//  gcc -std=c11 -ggdb -fno-stack-protector -o 10_asan.exe  10_asan.c
 //
 //      -fno-stack-protector    deshabilitamos ciertas protecciones que hace el compilador
 //                              sobre los buffers (reordenamiento en el stack y canaries)
@@ -20,7 +20,7 @@
 
 // [3]
 // Armar un ejecutable con ASAN activado "AddressSanitizer" (es un feature experimental de gcc):
-//  gcc -std=c99 -ggdb -fno-stack-protector -fsanitize=address -lasan -o 10_asan.exe  10_asan.c
+//  gcc -std=c11 -ggdb -fno-stack-protector -fsanitize=address -lasan -o 10_asan.exe  10_asan.c
 //
 //      -fsanitize=address      habilita la generacion de codigo especial (mucho mas lento)
 //                              que instrumenta los accesos a memoria y permite detectar errores

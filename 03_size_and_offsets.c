@@ -1,5 +1,5 @@
 // [1] Generar codigo objeto (sin linkear) con:
-//  gcc -Wall -Werror -std=c99 -pedantic -ggdb -c 03_size_and_offsets.c
+//  gcc -Wall -Werror -std=c11 -pedantic -ggdb -c 03_size_and_offsets.c
 //
 // Error, eh? Esta vez pusimos una forward declaration de la estructura Person,
 // por que falla la compilacion esta vez?
